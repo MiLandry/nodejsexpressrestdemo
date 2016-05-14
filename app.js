@@ -26,7 +26,30 @@ bookRouter.route('/Books')
 	})
 	.get(function(req, res)
 	{
-		Book.find(function(err,books)
+
+		var query = {};
+
+		if (req.query.genre)
+		{
+			query.genre = req.query.genre;
+
+		}
+
+		Book.find(query, function(err,books)
+			{
+				if(err)
+					console.log(err)
+				else
+					res.json(books);
+			});
+	});
+
+bookRouter.route('/Books/:bookId')
+	.get(function(req, res)
+	{
+
+
+		Book.findById(req.params.bookId, function(err,books)
 			{
 				if(err)
 					console.log(err)
@@ -36,6 +59,8 @@ bookRouter.route('/Books')
 	});
 
 app.use('/api', bookRouter);
+
+
 
 app.get('/', function(req, res)
 {
