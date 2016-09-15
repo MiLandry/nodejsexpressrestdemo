@@ -15,6 +15,7 @@ bookRouter.use('/:bookId', function(req, res, next)  //this is applying middlewa
 {
 	Book.findById(req.params.bookId, function(err,book)
 		{
+			console.log("looking for book id: " + req.params.bookId);
 			if(err)
 				res.status(500).send(err);
 			else if (book)
