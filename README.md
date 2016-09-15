@@ -7,6 +7,14 @@ localhost:8080
 
 To import Book data into your mongoDB database. Make sure MongoDB is running then run 'mongo bookAPI < booksJson.js' from the command line.
 
+## Test an endpoint
+browse to
+http://localhost:3000/api/books
+
+http://localhost:3000/api/books/57dab561f4184504b68cb364
+
+
+
 
 ###misc
 
