@@ -7,7 +7,7 @@ if (process.env.ENV == 'Test')
 	db = mongoose.connect('mongodb://localhost/bookAPI_test');
 else
 {
-	db = mongoose.connect('mongodb://localhost/bookAPI');
+	db = mongoose.connect('mongodb://mike:12345@ds033126.mlab.com:33126/book_db');
 }
 
 var Book = require('./models/bookModel');
