@@ -1,5 +1,6 @@
 var express = require('express'),
 	mongoose = require('mongoose'),
+    winston = require('winston'),
 	bodyParser = require('body-parser');
 
 var db;
@@ -34,6 +35,9 @@ app.get('/', function(req, res)
 
 app.listen(port, function()
 {
+    winston.log('info', 'Hello log files!', {
+  someKey: 'some-value'
+});
 	console.log('Running on PORT: ' + port);
 });
 
