@@ -35,9 +35,11 @@ app.get('/', function(req, res)
 
 app.listen(port, function()
 {
-    winston.log('info', 'Hello log files!', {
-  someKey: 'some-value'
-});
+  winston.log('info', 'Hello log files!', {
+    someKey: 'some-value'
+  });
+
+  winston.log('info', express);
 	console.log('Running on PORT: ' + port);
 });
 
