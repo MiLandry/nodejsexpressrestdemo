@@ -21,10 +21,11 @@ phantom.create()
       sitepage.open('foo.html');
     })
   .then(status => {
-    setTimeout(function(){
-      return sitepage.renderBase64('PNG');
-    },
-    3000);
+    // setTimeout(function(){
+    //   return sitepage.renderBase64('PNG');
+    // },
+    // 3000);
+    return sitepage.renderBase64('PNG');
   })
   .then(base64 => {
       console.log("base64: " + base64);
